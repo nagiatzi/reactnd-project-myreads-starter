@@ -5,6 +5,8 @@ import BookShelfChanger from './BookShelfChanger';
 function Book(props) {
 	const { book, onChangeShelf } = props;
 
+
+	//ternary to check if there is a thubnail!
 	const thumbnail =
 		book.imageLinks === undefined
 			? 'https://dummyimage.com/128x193/333/ffffff&text=missing+image'
