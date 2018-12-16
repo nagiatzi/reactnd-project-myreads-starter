@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class BookShelfChanger extends Component {
+class BookOptionsRender extends Component {
 	state = {
 		isUpdating: false
 	};
@@ -37,9 +37,9 @@ class BookShelfChanger extends Component {
 	}
 }
 
-BookShelfChanger.propTypes = {
+BookOptionsRender.propTypes = {
 	book: PropTypes.object.isRequired,
 	onChangeShelf: PropTypes.func.isRequired
 };
 
-export default BookShelfChanger;
+export default BookOptionsRender;

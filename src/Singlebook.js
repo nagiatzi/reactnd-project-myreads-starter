@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BookShelfChanger from './BookShelfChanger';
+import BookOptionsRender from './BookOptionsRender';
 
 function Singlebook(props) {
 	const { book, onChangeShelf } = props;
@@ -22,7 +22,7 @@ function Singlebook(props) {
 						className="book-cover"
 						style={{ width: 128, height: 193, backgroundImage: `url(${thumbnail})` }}
 					/>
-					<BookShelfChanger book={book} onChangeShelf={onChangeShelf} />
+					<BookOptionsRender book={book} onChangeShelf={onChangeShelf} />
 				</div>
 				<div className="book-title">{book.title}</div>
 				<div className="book-authors">{authors}</div>
