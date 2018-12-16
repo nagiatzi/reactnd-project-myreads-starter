@@ -65,6 +65,16 @@ body, .app {
   bottom: 25px;
 }
 
+.open-search a{
+  color:  #2e7c31;
+  text-decoration: none;
+
+}
+
+.bookshelf-status {
+  color:  #2e7c31;
+}
+
 .open-search button {
   display: block;
   width: 50px;
