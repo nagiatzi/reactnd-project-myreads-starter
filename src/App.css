@@ -14,14 +14,24 @@ body, .app {
 
 .list-books-title {
   padding: 10px 0;
-  background: #2e7c31;
+  background: white;
   text-align: center;
+  border: 2px solid #2e7c31;	
+}
+
+.list-books-title:hover {
+  background:  #2e7c31;
+  border: 2px solid  white;		
+}
+
+.list-books-title:hover.list-books-title h1 {
+  color: white;
 }
 
 .list-books-title h1 {
   font-weight: 400;
   margin: 0;
-  color: white;
+  color: #2e7c31;
 }
 
 .list-books-content {
@@ -41,6 +51,8 @@ body, .app {
 
 .bookshelf-title {
   border-bottom: 1px solid #dedede;
+  font-weight: 200;
+  color:  #2e7c31;
 }
 
 .bookshelf-books {
