@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Book from './Book';
+import Singlebook from './Singlebook';
 
 function BookShelf(props) {
 	return (
@@ -14,7 +14,7 @@ function BookShelf(props) {
 				) : (
 					<ol className="books-grid">
 						{props.fBooks.map(book => (
-							<Book key={book.id} book={book} onChangeShelf={props.onChangeShelf} />
+							<Singlebook key={book.id} book={book} onChangeShelf={props.onChangeShelf} />
 						))}
 					</ol>
 				)}

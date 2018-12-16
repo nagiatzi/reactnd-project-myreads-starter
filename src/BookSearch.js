@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Book from './Book';
 import { Link } from 'react-router-dom';
 import * as BooksAPI from './BooksAPI';
+import Singlebook from './Singlebook';
 
 class BookSearch extends Component {
 	state = {
 		query: '',
-		sBooks: [],
+		searchBooks: [],
 		isSearching: false
 	};
 
@@ -22,19 +22,19 @@ class BookSearch extends Component {
 			this.setState({ isSearching: true });
 			BooksAPI.search(this.state.query).then(res => {
 				if (res.error) {
-					this.setState({ sBooks: [] });
+					this.setState({ searchBooks: [] });
 				} else if (res) {
 					this.updateBooks(res);
 				}
 			});
 		} else {
-			this.setState({ sBooks: [] });
+			this.setState({ searchBooks: [] });
 		}
 	};
 
 	updateBooks = books => {
-		const bks = books;
-		for (const book of bks) {
+		const searchedBooks = books;
+		for (const book of searchedBooks) {
 			book.shelf = 'none';
 			for (const shelvedBook of this.props.shelvedBooks) {
 				if (book.id === shelvedBook.id) book.shelf = shelvedBook.shelf;
@@ -42,20 +42,20 @@ class BookSearch extends Component {
 		}
 
 		this.setState({
-			sBooks: bks,
+			searchBooks: searchedBooks,
 			isSearching: false
 		});
-	};
+	}; 
 
 	updateBook = books => {
-		const sBks = this.state.sBooks;
-		for (const book of sBks) {
+		const {searchBooks} = this.state;
+		for (const book of searchBooks) {
 			for (const shelvedBook of books) {
 				if (book.id === shelvedBook.id) book.shelf = shelvedBook.shelf;
 			}
 		}
 
-		this.setState({ sBooks: sBks });
+		this.setState({ searchBooks });
 	};
 
 	changeShelf = (book, e) => {
@@ -63,7 +63,7 @@ class BookSearch extends Component {
 	};
 
 	render() {
-		const { sBooks } = this.state;
+		const { searchBooks } = this.state;
 
 		return (
 			<div className="search-books">
@@ -85,8 +85,8 @@ class BookSearch extends Component {
 				) : (
 					<div className="search-books-results">
 						<ol className="books-grid">
-							{sBooks.map(book => (
-								<Book key={book.id} book={book} onChangeShelf={this.changeShelf} />
+							{searchBooks.map(book => (
+								<Singlebook key={book.id} book={book} onChangeShelf={this.changeShelf} />
 							))}
 						</ol>
 					</div>

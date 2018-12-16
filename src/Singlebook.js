@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BookShelfChanger from './BookShelfChanger';
 
-function Book(props) {
+function Singlebook(props) {
 	const { book, onChangeShelf } = props;
 
 
@@ -31,9 +31,9 @@ function Book(props) {
 	);
 }
 
-Book.propTypes = {
+Singlebook.propTypes = {
 	book: PropTypes.object.isRequired,
 	onChangeShelf: PropTypes.func.isRequired
 };
 
-export default Book;
+export default Singlebook;
