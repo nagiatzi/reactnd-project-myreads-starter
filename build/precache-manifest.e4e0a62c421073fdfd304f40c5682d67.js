@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/MyReads/static/media/arrow-drop-down.78c6f53b.svg"
   },
   {
-    "revision": "dec340f4005891eace18b44b63e56c31",
+    "revision": "3f19faab9b0414f8ac5e8e115c4f922a",
     "url": "/MyReads/index.html"
   }
 ];
