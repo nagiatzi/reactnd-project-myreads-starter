@@ -13,7 +13,6 @@ To get started developing right away:
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
->Live GitHub Page - [MyReads](https://nagiatzi.github.io/myReads/)
 
 ## Contributing
 * Contributions will not be accepted
